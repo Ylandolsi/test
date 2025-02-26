@@ -42,6 +42,9 @@ class Task{
     setDone(){
         this.done = true;
     }
+    togleDone(){
+        this.done = !this.done;
+    }
     getTitle(){
         return this.title;
     }
@@ -53,6 +56,9 @@ class Task{
     }
     getPriorityInt(){
         return this.priority;
+    }
+    getProject(){
+        return this.project;
     }
     getPriorityString(){
         if (this.priority == 1) return 'high';
@@ -66,6 +72,7 @@ class Task{
         return this.counter;
     }
 
+    
 
 
     getHtmlTask() {

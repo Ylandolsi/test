@@ -69,8 +69,15 @@ h1{
 
 
 }
+.tasks{
+    flex: 3;
+}
+.projects{
+    flex: 2;
+}
 
-.title{
+.title,
+.task-project-title{
     font-size: 1.6rem;
     margin-bottom: 20px;
     font-weight: bold;
@@ -147,10 +154,13 @@ body{
 .new-Project-form,
 .new-Task-form{
     display: inline-flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     padding: 20px;
+    width: 100%;
+    
+
 }
 
 label{
@@ -185,6 +195,8 @@ button:hover{
 dialog{
     z-index: 3;
     margin: auto;
+    width: 400px;
+    padding: 20px;
 }
 
 
@@ -203,3 +215,8 @@ dialog{
     border-radius: 10px;
 }
 
+
+.coched{
+    text-decoration: line-through;
+    color: #000000;
+}
