@@ -467,12 +467,15 @@ buttonSubmitTask.addEventListener('click', function(event) {
 document.addEventListener('click', function(e) {
     if (e.target && e.target.getAttribute('type')=='checkbox') {
         const flexcon = e.target.parentElement;
+        const taskContainer = flexcon.parentElement;
         if ( flexcon){
             
-            const taskContainer = flexcon.querySelector('.infos');
-            if (taskContainer) {
+            const infoContainer = flexcon.querySelector('.infos');
+            if (infoContainer) {
                 
-                taskContainer.classList.toggle('coched');
+                infoContainer.classList.toggle('coched');
+
+
                 
                 // Find the task in tasksALL and toggle its completed status
                 const taskId = taskContainer.getAttribute('id');
