@@ -135,19 +135,66 @@ svg {
 
 
 
-.single-task[priority="very high"]{
+.single-task[priority="high"]{
     border: 2px dotted #940000;
     border-radius: 10px;
 }
-.single-task[priority="high"]{
-    border: 2px dotted #12a554;
-    border-radius: 10px;
-}
 .single-task[priority="meduim"]{
-    border: 2px dotted #1c6088;
+    border: 2px dotted #12a554;
     border-radius: 10px;
 }
 .single-task[priority="low"]{
     border: 2px dotted #000000;
     border-radius: 10px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.new-Project-form,
+.new-Task-form{
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+label{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.new-Task-form input, button,select,textarea ,
+.new-Project-form input, button,select,textarea{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid black;
+    width: max(100%,250px);
+
+}
+
+.can{
+    background-color: #00ff4c;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+dialog{
+    z-index: 3;
+    margin: auto;
 }
