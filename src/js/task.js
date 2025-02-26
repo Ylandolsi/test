@@ -93,6 +93,7 @@ class Task{
 
         let infosDiv = document.createElement('div');
         infosDiv.classList.add('infos');
+        if (this.done) infosDiv.classList.add("coched") ; 
 
         let taskTitleDiv = document.createElement('div');
         taskTitleDiv.classList.add('task-title');

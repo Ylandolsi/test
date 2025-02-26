@@ -480,6 +480,8 @@ document.addEventListener('click', function(e) {
                 if (task) {
                     task.togleDone();
                 }
+
+                e.target.checked = !e.target.checked;
             }
         }
     }
