@@ -1,3 +1,26 @@
+import { Project } from './project';
+import { Task } from './task';
+import '../css/style.css'; 
+import '../css/reset-modern.css';
+
+/*** SAMPlES OF USAGE OF THE CLASSES ***/
+let projectTest1 = new Project('Project 1');
+let taskTest1 = new Task('task1', 'description1', '2021-12-12', 'high' , 'Project 1');
+let taskTest2 = new Task('task2', 'description2', '2021-12-12', 'low' ,'Project 1');
+projectTest1.addTask(taskTest1);
+projectTest1.addTask(taskTest2);
+
+console.log(projectTest1.getName());
+console.log(taskTest1.infos());
+console.log(taskTest2.infos());
+/***********/
+
+
+
+let projectsALL= [projectTest1];
+let tasksALL = [taskTest1 , taskTest2];
+
+
 let newProjectButton = document.querySelector('.new-project');
 let deleteProjectButton = document.querySelectorAll('.delete-project');
 let editProjectButton = document.querySelectorAll('.edit-project');
@@ -7,12 +30,39 @@ let editProjectButton = document.querySelectorAll('.edit-project');
 let deleteTaskButton = document.querySelectorAll('.delete-task');
 let editTaskButton = document.querySelectorAll('.edit-task');
 let newTaskButton = document.querySelector('.new-task');
-let numberOfTasks = document.querySelectorAll('.task-list').length;
 
 
 
 let dialogProject = document.getElementById('dialog project');
 let dialogTask = document.getElementById('dialog task');
+
+
+
+
+let projectsListSelect = document.querySelectorAll('.single-project');
+
+projectsListSelect.forEach( project => {
+    let idofProject = project.getAttribute('id');
+    let checkflex = project.querySelector('.checkflex');
+
+    checkflex.addEventListener('click', function(){
+        let project = projectsALL.find( project => project.getId() == idofProject );
+        let tasks = project.getTasks();
+        let taskList = document.querySelector('.tasks-list');
+        taskList.innerHTML = '';
+
+        tasks.forEach( task => {
+            taskList.appendChild(task.getHtmlTask());   
+        });
+    });
+}); 
+
+
+
+
+
+
+
 
 
 let currentTaskContainer = null;

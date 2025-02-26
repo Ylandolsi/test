@@ -104,6 +104,7 @@ h1{
     flex-direction: column;
     overflow: auto;
     height: 400px;
+    gap:5px;
 
 }
 .infos{
@@ -130,23 +131,10 @@ h1{
 } 
 
 svg {
-    scale: 0.6;
+    cursor: pointer;
+    fill: #000000 !important;
 }
 
-
-
-.single-task[priority="high"]{
-    border: 2px dotted #940000;
-    border-radius: 10px;
-}
-.single-task[priority="meduim"]{
-    border: 2px dotted #12a554;
-    border-radius: 10px;
-}
-.single-task[priority="low"]{
-    border: 2px dotted #000000;
-    border-radius: 10px;
-}
 
 body{
     display: flex;
@@ -198,3 +186,20 @@ dialog{
     z-index: 3;
     margin: auto;
 }
+
+
+
+
+.high {
+    border: 2px dotted #940000;
+    border-radius: 10px;
+}
+.medium {
+    border: 2px dotted #12a554;
+    border-radius: 10px;
+}
+.low{
+    border: 2px dotted #000000;
+    border-radius: 10px;
+}
+
