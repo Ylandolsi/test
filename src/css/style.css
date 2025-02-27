@@ -94,6 +94,9 @@ h1{
     gap:10px;
 
 }
+.checkflex:hover{
+    cursor: pointer;
+}
 .single-project , .single-task {
 
     display: flex;

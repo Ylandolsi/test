@@ -86,8 +86,9 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
             workingProjDom.querySelector('.project-name').textContent = newName;
 
             let titleprojTasks= document.querySelector(".task-project-title") ;
-            titleprojTasks.textContent = newName;
-            
+            if ( titleprojTasks.getAttribute("idproject") == workingProj.getId()) 
+                titleprojTasks.textContent = newName;
+
             dialogProject.close();
         }); 
 
@@ -489,6 +490,9 @@ document.addEventListener('click', function(e) {
                 }
 
                 e.target.checked = !e.target.checked;
+                let chk = flexcon.querySelector('input[type="checkbox"]');
+                if (chk) chk.checked = true;
+
             }
         }
     }
