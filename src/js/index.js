@@ -491,7 +491,7 @@ document.addEventListener('click', function(e) {
 
                 e.target.checked = !e.target.checked;
                 let chk = flexcon.querySelector('input[type="checkbox"]');
-                if (chk) chk.checked = true;
+                if (chk) chk.checked = !chk.checked;
 
             }
         }
