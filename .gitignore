@@ -1,17 +1,29 @@
+# Dependencies
 node_modules/
-dist/
+jspm_packages/
+
+# Build directories 
+# dist/
 build/
-#ignore environment file
-.env
-# ignore OS specific files
-.DS_Store
+.cache/
+
+# Logs
 logs/
 *.log
+npm-debug.log*
 
+# Environment files
+.env
+.env.*
+
+# OS specific files
+.DS_Store
 Thumbs.db
 
+# Editor directories
 .idea/
 .vscode/
 
-dist/
-
+# Other
+*.tgz
+.yarn-integrity

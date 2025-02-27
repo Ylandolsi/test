@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <dialog id="dialog task">
+      <form class="new-Task-form">
+        <label for="Task-title-input">
+          Title
+          <input type="text" id="Task-title-input" required />
+        </label>
+        <label for="Task-Notes-input">
+          Notes
+          <textarea id="Task-Notes-input"></textarea>
+        </label>
+        <label for="Task-Date-input">
+          Date
+          <input type="date" id="Task-Date-input" required />
+        </label>
+        <label for="Task-Priority-input">
+          Priority
+          <select id="Task-Priority-input" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <label for="Task-Project-input">
+          Project
+          <select id="Task-Project-input" required>
+            <option value="Project 1">Project 1</option>
+          </select>
+        </label>
+        <div class="buttons">
+          <button type="submit" class="cannot submit">Create</button>
+          <button type="submit" class="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="dialog project">
+      <form class="new-Project-form">
+        <label for="Project-Name-input">
+          Name
+          <input type="text" id="Project-Name-input" required />
+        </label>
+        <div class="buttons">
+          <button type="submit" class="can submit">Create</button>
+          <button type="submit" class="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="container">
+      <div class="Title">
+        <h1>Todo List</h1>
+      </div>
+      <div class="subcontainer">
+        <div class="projects">
+          <div class="project title">Projects</div>
+          <div class="projects-list">
+            <div class="single-project" id="1">
+              <div class="checkflex">
+                <div class="infos">
+                  <div class="project-name">Project 1</div>
+                </div>
+              </div>
+              <div class="icons">
+                <svg
+                  class="delete-project"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                  />
+                </svg>
+                <svg
+                  class="edit-project"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <button class="new-project">New Project</button>
+        </div>
+        <div class="tasks">
+          <div class="task-project-title" idproject="">Project 1</div>
+          <div class="display-tasks">
+            <div class="tasks-list">
+              <!-- <div class="single-task high" id="1">
+                <div class="checkflex">
+                  <input type="checkbox" id="task-1-check" />
+                  <div class="infos">
+                    <div class="task-title">task name</div>
+                    <div class="task-date">2021-12-12</div>
+                  </div>
+                </div>
+                <div class="icons">
+                  <svg
+                    class="delete-task"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                    />
+                  </svg>
+                  <svg
+                    class="edit-task"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+                    />
+                  </svg>
+                </div>
+                  -->
+            </div>
+
+            <button class="new-task">New Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
