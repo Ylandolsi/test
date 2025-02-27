@@ -34,8 +34,6 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'), // Serve files from the dist directory
-    compress: true,
-    port: 9000,
-  },
+    watchFiles: ["./src/index.html"],
+  }
 };
