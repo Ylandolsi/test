@@ -88,7 +88,8 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
             let newName = nameField.value;
 
             let optionProjectListDom = document.querySelector('#Task-Project-input');
-            let optionProject = optionProjectListDom.querySelector(`option[value="${workingProj.getName()}"]`);
+            let oldName = workingProj.getName() ; 
+            let optionProject = optionProjectListDom.querySelector(`option[value="${oldName}"]`);
 
             workingProj.setName(newName);
 
@@ -100,6 +101,7 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
 
 
             optionProject.textContent = newName;
+            optionProject.setAttribute("value" , newName);
 
             dialogProject.close();
         }); 
