@@ -221,6 +221,11 @@ function editOrNewTask(edit, taskContainer){
         buttonSubmitTask.textContent = 'Edit';
     }
     else {
+        formTask.querySelector('#Task-title-input').value = '';
+        formTask.querySelector('#Task-Notes-input').value = '';
+        formTask.querySelector('#Task-Date-input').value = '';
+        formTask.querySelector('#Task-Priority-input').value = '';
+        formTask.querySelector('#Task-Project-input').value = '';
 
         buttonSubmitTask.textContent = 'Create';
     }
