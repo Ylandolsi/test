@@ -84,6 +84,10 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
             workingProj.setName(newName);
 
             workingProjDom.querySelector('.project-name').textContent = newName;
+
+            let titleprojTasks= document.querySelector(".task-project-title") ;
+            titleprojTasks.textContent = newName;
+            
             dialogProject.close();
         }); 
 
