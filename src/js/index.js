@@ -65,6 +65,11 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
         if (projectIndex !== -1) {
             projectsALL.splice(workingProj.id, 1);
         }
+
+
+        let optionProjectListDom = document.querySelector('#Task-Project-input');
+        let optionProject = optionProjectListDom.querySelector(`option[value="${workingProj.getName()}"]`);
+        optionProject.remove();
         workingProjDom.remove();
 
     });
@@ -81,6 +86,10 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
                 return; 
             e.preventDefault();
             let newName = nameField.value;
+
+            let optionProjectListDom = document.querySelector('#Task-Project-input');
+            let optionProject = optionProjectListDom.querySelector(`option[value="${workingProj.getName()}"]`);
+
             workingProj.setName(newName);
 
             workingProjDom.querySelector('.project-name').textContent = newName;
@@ -88,6 +97,9 @@ function edit_Delete_Project_Events(workingProj , workingProjDom){
             let titleprojTasks= document.querySelector(".task-project-title") ;
             if ( titleprojTasks.getAttribute("idproject") == workingProj.getId()) 
                 titleprojTasks.textContent = newName;
+
+
+            optionProject.textContent = newName;
 
             dialogProject.close();
         }); 
@@ -160,6 +172,8 @@ newProjectButton.addEventListener('click', function(){
     submitButtonProject.textContent = 'Create';
 
 
+
+
 }); 
 submitButtonProject.addEventListener('click', function(e){
 
@@ -173,8 +187,18 @@ submitButtonProject.addEventListener('click', function(e){
     let htmlNewProject = newProjectCreated.getHtmlProject();
     projectsALL.push(newProjectCreated);
     document.querySelector('.projects-list').appendChild(htmlNewProject);
+
+
+    let optionProjectListDom = document.querySelector('#Task-Project-input');
+    let optionProject = document.createElement('option');
+    optionProject.value = newProjectCreated.getName();
+    optionProject.textContent = newProjectCreated.getName();
+    optionProjectListDom.appendChild(optionProject);
+
     /* EDIT  & DELETE   PROJECT && show tasks sorted   */
     functionalitiesProject(newProjectCreated , htmlNewProject);
+
+
 
 
     dialogProject.close();
