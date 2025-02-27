@@ -1,39 +1,38 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// webpack.config.js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-
-  entry: './src/js/index.js', // Entry point for your application
+  entry: "./src/js/index.js",
   output: {
-    filename: 'bundle.js', // Output bundle file name
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/, // Rule for CSS files
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.js$/, // Rule for JavaScript files
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
-      },
-    ],
+  devtool: "eval-source-map",
+  devServer: {
+    watchFiles: ["./src/template.html"],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Path to your HTML template
-      filename: 'index.html', // Output HTML file name
+      template: "./src/template.html",
     }),
   ],
-  devServer: {
-    watchFiles: ["./src/index.html"],
-  }
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+    ],
+  },
 };
