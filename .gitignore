@@ -3,7 +3,7 @@ node_modules/
 jspm_packages/
 
 # Build directories - COMMENT OUT DIST DURING DEPLOYMENT
-# dist/
+dist/
 build/
 .cache/
 
